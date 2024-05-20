@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap project documentation theme for developers</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+    <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body class="body-green">
+    <div class="page-wrapper">
+      <!-- ******Header****** -->
+      <header id="header" class="header">
+        <div class="container">
+          <div class="branding">
+            <h1 class="logo">
+              <a href="index.html">
+                <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                <span class="text-highlight">Pretty</span>
+                <span class="text-bold">Docs</span>
+              </a>
+            </h1>
+          </div>
+          <!--//branding-->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Asp Dot net core 8 CRUD</li>
+          </ol>
+          <div class="top-search-box">
+            <form class="form-inline search-form justify-content-center" action="" method="get">
+              <input type="text" placeholder="Search..." name="search" class="form-control search-input">
+              <button type="submit" class="btn search-btn" value="Search">
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <!--//container-->
+      </header>
+      <!--//header-->
+      <div class="doc-wrapper">
+        <div class="container">
+          <div id="doc-header" class="doc-header text-center">
+            <h1 class="doc-title">
+              <i class="icon fa fa-paper-plane"></i>Asp Dot net core 8 CRUD
+            </h1>
+            <div class="meta">
+              <i class="far fa-clock"></i> Last updated: 20/05/2024
+            </div>
+          </div>
+          <!--//doc-header-->
+          <div class="doc-body row">
+            <div class="doc-content col-md-12 col-12 order-1">
+              <div class="content-inner">
+                <section id="download-section" class="doc-section">
+                  <h2 class="section-title">Description</h2>
+                  <div class="section-block">
+                    <p>Description coming soon... </p>
+                    <a href="https://github.com/Suraj999-github/Asp.net-core-8-Crud-with-mvc" class="btn btn-green" target="_blank">
+                      <i class="fas fa-download"></i> Download Project on Github </a>
+                  </div>
+                </section>               
+                <!--//doc-section-->
+				
+				 <section  class="doc-section">
+                  <h2 class="section-title">Step 1</h2>                 
+                  <div id="html" class="section-block">
+                    <h5>Create a new  asp.net core web mvc project  </h5> 										
+                  </div> 		         
+                </section> 
+				 <section  class="doc-section">
+                  <h2 class="section-title">Step 2</h2>                 
+                  <div id="html" class="section-block">
+                    <h5>Install packages from nutgets packages</h5>  
+					<p>1. Microsoft.EntityFrameworkCore.SqlServer</p>	
+					<p>2. Microsoft.EntityFrameworkCore</p>	
+					<p>3. Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation</p>						
+                  </div> 		         
+                </section> 
+				 <section  class="doc-section">
+                  <h2 class="section-title">Step 3</h2>                 
+                  <div id="html" class="section-block">
+                    <h5>Under Models folder create class <b>Student</b> </h5>  
+					  <div class="code-block">                     
+					  <textarea class="bg-body-secondary col-md-12 p-3" readonly rows="45" style="background:none; border:none; resize:none; outline:none; width:100%;">
+    [Table("students")]
+    public class Student
+    {
+        [Column("id")]
+        public long Id { get; set; }
+        [Column("phone_number")]
+        public string? PhoneNumber { get; set; }
+
+        [Column("salutation")]
+        public string? Salutation { get; set; }
+
+        [Column("first_name")]
+        public string? FirstName { get; set; }
+
+        [Column("middle_name")]
+        public string? MiddleName { get; set; }
+
+        [Column("last_name")]
+        public string? LastName { get; set; }
+
+        [Column("created_date")]
+        public DateTime? CreatedDate { get; set; }
+    }
+    public class AddStudent
+    {
+        public string? PhoneNumber { get; set; }
+        public string? Salutation { get; set; }
+        public string? FirstName { get; set; }
+        public string? MiddleName { get; set; }
+        public string? LastName { get; set; }
+    }
+    public class UpdateStudent
+    {
+        public long Id { get; set; }
+        public string? PhoneNumber { get; set; }
+        public string? Salutation { get; set; }
+        public string? FirstName { get; set; }
+        public string? MiddleName { get; set; }
+        public string? LastName { get; set; }
+    }
+						</textarea>
+                    </div>					
+                  </div> 		         
+                </section> 
+				
+                <section  class="doc-section">
+                  <h2 class="section-title">Step 4</h2>                 
+                  <div id="html" class="section-block">
+                    <h5>Create a DbContext class with name <b>ApplicationDbContext</b> to connect with database </h5>  
+								  <div class="code-block">                     
+					  <textarea class="bg-body-secondary col-md-12 p-3" readonly rows="18" style="background:none; border:none; resize:none; outline:none; width:100%;">
+    
+    public class ApplicationDbContext : DbContext
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+           base.OnModelCreating(builder);
+        }
+         public DbSet<Student> student { get; set; }
+    }
+  
+						</textarea>
+                    </div>					
+                  </div> 		         
+                </section>
+               <section  class="doc-section">
+                  <h2 class="section-title">Step 5</h2>                 
+                  <div id="html" class="section-block">
+                   
+                      <h5> Add <b>ConnectionStrings</b> to the appsetting.json file where  Catalog is database name  </h5>                     
+                   	                 
+                  </div> 
+					<div class="code-block">                     
+					  <textarea class="bg-body-secondary col-md-12 p-3" readonly rows="15" style="background:none; border:none; resize:none; outline:none; width:100%;">
+    
+  {
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=Dbservername;Initial Catalog=Test;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;"
+  }, 
+  "AllowedHosts": "*"
+}
+  
+						</textarea>
+                    </div>				  
+                </section> 
+				
+				    <section  class="doc-section">
+                  <h2 class="section-title">Step 6</h2>                 
+                  <div id="html" class="section-block">
+                   
+                      <h5> Create table name students. </h5>                     
+                   	                 
+                  </div> 
+					<div class="code-block">                     
+					  <textarea class="bg-body-secondary col-md-12 p-3" readonly rows="13" style="background:none; border:none; resize:none; outline:none; width:100%;">
+    
+CREATE TABLE [dbo].[students](
+	id Bigint           NOT NULL    IDENTITY    PRIMARY KEY,
+	phone_number [varchar](50) NULL,
+	salutation [nvarchar](10) NULL,
+	first_name [nvarchar](10) NULL,
+	middle_name [nvarchar](50) NULL,
+	last_name [nvarchar](10) NULL,	
+	created_date [datetime] default getdate()	
+	);
+  
+						</textarea>
+                    </div>				  
+                </section> 
+				
+								    <section  class="doc-section">
+                  <h2 class="section-title">Step 7</h2>                 
+                  <div id="html" class="section-block">
+                   
+                      <h5> Update Programs.cs file for adding DbContext dependencies as:</h5>                     
+                   	                 
+                  </div> 
+					<div class="code-block">                     
+					  <textarea class="bg-body-secondary col-md-12 p-3" readonly rows="10" style="background:none; border:none; resize:none; outline:none; width:100%;">
+    
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+//DB Conn:
+string connString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connString));
+
+  
+						</textarea>
+                    </div>				  
+                </section> 
+				
+												    <section  class="doc-section">
+                  <h2 class="section-title">Step 8</h2>                 
+                  <div id="html" class="section-block">
+                   
+                      <h5>Under Controller folder add new controller named <b>StudentController</b></h5>                     
+                   	      <div id="html" class="section-block">                   
+                      <h6> After creating <b>StudentController</b> follow the steps </h6>  
+						<p> Create HttpGet view page named <b>add</b></p>
+						<p> Create HttpPost method to save student detail named <b>add</b></p>	
+						<p> Create HttpGet view page named <b>list</b></p>
+						<p> Create HttpPost method to list  students named <b>listStudent</b></p>		
+						<p> Create HttpGet view page named <b>update</b></p>
+						<p> Create HttpPost method to update  student detail named <b>update</b></p>				  
+                  </div>              
+                  </div> 
+					<div class="code-block">                     
+					  <textarea class="bg-body-secondary col-md-12 p-3" readonly rows="110" style="background:none; border:none; resize:none; outline:none; width:100%;">
+    
+ public class StudentController : Controller
+ {
+     private readonly ApplicationDbContext _context;
+
+     public StudentController(ApplicationDbContext context)
+     {
+         _context = context;
+     }
+     [HttpGet]
+     [Route("/student/list")]
+     public IActionResult list()
+     {
+         return View();
+     }
+     [HttpPost]
+     [Route("/student/list")]
+     public async Task<Object> listStudent()
+     {
+         try
+         {
+           return await _context.student.ToListAsync();
+         }
+         catch (Exception ex)
+         {
+             return ex.Message;
+         }
+     }
+     [HttpGet]
+     [Route("/student/add")]
+     public IActionResult add()
+     {
+         AddStudent student = new AddStudent();
+         return View(student);
+     }
+     [HttpPost]
+     [Route("/student/add")]
+     public async Task<IActionResult> add(AddStudent req)
+     {
+         try
+         {
+             Student entity = new Student();
+             entity.PhoneNumber = req.PhoneNumber;
+             entity.FirstName = req.FirstName;
+             entity.LastName = req.LastName;
+             entity.MiddleName = req.MiddleName;
+             entity.Salutation = req.Salutation;
+             entity.CreatedDate= DateTime.Now;
+             await _context.student.AddAsync(entity);
+             await _context.SaveChangesAsync();            
+             return Redirect("/student/list");
+         }
+         catch (Exception ex)
+         {
+             var msg = ex.Message;
+             return View(req);
+         }
+     }
+
+     [HttpGet]
+     [Route("/student/update/{id}")]
+     public async Task<IActionResult> update(long id)
+     {
+         var data= await _context.student.FindAsync(id);
+         UpdateStudent student = new UpdateStudent();
+         student.Id = data.Id;
+         student.PhoneNumber = data.PhoneNumber;
+         student.FirstName = data.FirstName;
+         student.LastName = data.LastName;
+         student.MiddleName = data.MiddleName;
+         student.Salutation = data.Salutation;
+         return View(student);
+     }
+     [HttpPost]
+     [Route("/student/update/{id}")]
+     public async Task<IActionResult> update(UpdateStudent req, long id)
+     {
+         try
+         {
+             Student entity = new Student();
+             entity = await _context.student.FindAsync(req.Id);
+             if (entity != null)
+             {
+                 entity.PhoneNumber = req.PhoneNumber;
+                 entity.FirstName = req.FirstName;
+                 entity.LastName = req.LastName;
+                 entity.MiddleName = req.MiddleName;
+                 entity.Salutation = req.Salutation;
+                 _context.student.Update(entity);
+                 await _context.SaveChangesAsync();
+             }
+             return Redirect("/student/list");
+         }
+         catch (Exception ex)
+         {
+             var msg = ex.Message;
+             return View(req);
+         }
+     }
+
+ }
+
+  
+						</textarea>
+                    </div>	                					
+                </section> 
+										    <section  class="doc-section">
+                  <h2 class="section-title">Step 9</h2>                 
+                  <div id="html" class="section-block">
+                   
+                      <h5> The cshtml views are as follows </h5>                     
+                   	                 
+                  </div> 
+				    <h2 class="section-title">add.cshtml</h2>
+					<div class="code-block">                     
+					  <textarea class="bg-body-secondary col-md-12 p-3" readonly rows="50" style="background:none; border:none; resize:none; outline:none; width:100%;">
+@using CRUD.Models;
+@model AddStudent;
+
+<div class="container mt-3">
+    <h2>Add Student</h2>
+    <form method="post" asp-action="add" asp-controller="Student">
+        <div class="mb-3 mt-3">
+            <label for="FirstName">First Name:</label>
+            <input type="text" class="form-control" id="FirstName" placeholder="Enter your first name" name="FirstName" value="@Model.FirstName" required>
+        </div>
+        <div class="mb-3">
+            <label for="MiddleName">Middle Name:</label>
+            <input type="text" class="form-control" id="MiddleName" placeholder="Enter middle name" name="MiddleName" value="@Model.MiddleName">
+        </div>
+        <div class="mb-3">
+            <label for="LastName">Last Name:</label>
+            <input type="text" class="form-control" id="LastName" placeholder="Enter your last name" name="LastName" value="@Model.LastName" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="PhoneNumber">Phone Number:</label>
+            <input type="number" class="form-control" id="PhoneNumber" placeholder="Enter your phone number" name="PhoneNumber" value="@Model.PhoneNumber" maxlength="10" required>
+        </div>
+        <div class="mb-3">
+            <label for="Salutation">Salutation:</label>
+            <select class="form-control" id="Salutation" name="Salutation" value="@Model.Salutation" required>
+                <option value="Mr">
+                    Mr
+                </option>
+                <option value="Mrs">
+                    Mrs
+                </option>
+                <option value="Miss">
+                    Miss
+                </option>
+                <option value="Madam">
+                    Madam
+                </option>
+            </select>           
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a type="button" class="btn btn-warning" href="/student/list">Back</a>
+    </form>
+</div>
+  
+						</textarea>
+                    </div>	
+
+ <h2 class="section-title">list.cshtml</h2>
+					<div class="code-block">                     
+					  <textarea class="bg-body-secondary col-md-12 p-3" readonly rows="70" style="background:none; border:none; resize:none; outline:none; width:100%;">
+<div class="container mt-3">
+    <h2>Student List</h2>
+    <a type="button" class="btn btn-primary" href="/student/add">+ Add New</a>
+    <div class="row">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>Phone Number</th>
+                    <th>Salutation</th>
+                    <th>Created Date</th>
+                    <th>Action</th>
+                </tr>                
+            </thead>
+            <tbody id="studentList">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts {
+<script> 
+    $(document).ready(function () {
+        ListStudents();
+    });
+    function ListStudents() {
+            var mytable = document.getElementById("studentList");
+            mytable.innerHTML = "";
+    $.ajax({
+        url: '/student/list',
+        type: 'POST',
+        //data: {
+        //    'numberOfWords': 10
+       // },
+        dataType: 'json',
+        success: function (data) {
+
+            console.log(data);
+            if (data != null && data != undefined) {
+                var response = "";
+                for (let i = 0; i < data.length; i++) {
+                response = response + "<tr>";
+                response = response + "<td>" + data[i].firstName + "</td>";
+                response = response + "<td>" + data[i].middleName + "</td>";
+                response = response + "<td>" + data[i].lastName + "</td>";
+                response = response + "<td>" + data[i].phoneNumber + "</td>";
+                response = response + "<td>" + data[i].salutation + "</td>";
+                response = response + "<td>" + data[i].createdDate + "</td>";
+                response = response + "<td> <a type='button' class='btn btn-danger' href='/student/update/" + data[i].id + "'>Update</a></td>";
+                response = response + "</tr>";
+                }
+                mytable.innerHTML = response;
+            }
+        },
+        error: function (request, error) {
+            alert("Request: " + JSON.stringify(request));
+        }
+    });
+    }
+</script>
+}
+  
+						</textarea>
+                    </div>
+	 <h2 class="section-title">update.cshtml</h2>
+					<div class="code-block">                     
+					  <textarea class="bg-body-secondary col-md-12 p-3" readonly rows="50" style="background:none; border:none; resize:none; outline:none; width:100%;">
+@using CRUD.Models;
+@model UpdateStudent;
+
+<div class="container mt-3">
+    <h2>Update Student</h2>
+    <form method="post" asp-action="update" asp-controller="Student">
+        <div class="mb-3 mt-3">
+            <label for="FirstName">First Name:</label>
+            <input type="text" class="form-control" id="FirstName" placeholder="Enter your first name" name="FirstName" value="@Model.FirstName" required>
+        </div>
+        <div class="mb-3">
+            <label for="MiddleName">Middle Name:</label>
+            <input type="text" class="form-control" id="MiddleName" placeholder="Enter middle name" name="MiddleName" value="@Model.MiddleName">
+        </div>
+        <div class="mb-3">
+            <label for="LastName">Last Name:</label>
+            <input type="text" class="form-control" id="LastName" placeholder="Enter your last name" name="LastName" value="@Model.LastName" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="PhoneNumber">Phone Number:</label>
+            <input type="number" class="form-control" id="PhoneNumber" placeholder="Enter your phone number" name="PhoneNumber" value="@Model.PhoneNumber" maxlength="10" required>
+        </div>
+        <div class="mb-3">
+            <label for="Salutation">Salutation:</label>
+            <select class="form-control" id="Salutation" name="Salutation" value="@Model.Salutation" required>
+                <option value="Mr">
+                    Mr
+                </option>
+                <option value="Mrs">
+                    Mrs
+                </option>
+                <option value="Miss">
+                    Miss
+                </option>
+                <option value="Madam">
+                    Madam
+                </option>
+            </select>
+        </div>
+        <input type="hidden" id="Id" name="Id" value="@Model.Id">
+
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a type="button" class="btn btn-warning" href="/student/list">Back</a>
+    </form>
+</div>
+  
+						</textarea>
+                    </div>				
+                </section> 
+				                <section  class="doc-section">
+                  <h2 class="section-title">Project Folder structure is as follow</h2>                 
+                  <div id="html" class="section-block">
+                  <div class="col-md-12">
+<img src="docs/images/p1.PNG" class="img-fluid" alt="Responsive image">	
+</div>	
+                    </div>					
+                  </div> 		         
+                </section>
+                <!--//doc-section-->
+              </div>
+              <!--//content-inner-->
+            </div>          
+          </div>
+          <!--//doc-body-->
+        </div>
+        <!--//container-->
+      </div>
+      <!--//doc-wrapper-->
+
+    </div>
+    <!--//page-wrapper-->
+    <footer id="footer" class="footer text-center">
+      <div class="container">      
+      </div>
+      <!--//container-->
+    </footer>
+    <!--//footer-->
+    <!-- Main Javascript -->
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/prism/prism.js"></script>
+    <script src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>
+    <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
+    <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

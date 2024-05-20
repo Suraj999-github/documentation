@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap project documentation theme for developers</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+    <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body class="body-green">
+    <div class="page-wrapper">
+      <!-- ******Header****** -->
+      <header id="header" class="header">
+        <div class="container">
+          <div class="branding">
+            <h1 class="logo">
+              <a href="index.html">
+                <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                <span class="text-highlight">Pretty</span>
+                <span class="text-bold">Docs</span>
+              </a>
+            </h1>
+          </div>
+          <!--//branding-->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Asp Dot net core 8 CRUD</li>
+          </ol>
+          <div class="top-search-box">
+            <form class="form-inline search-form justify-content-center" action="" method="get">
+              <input type="text" placeholder="Search..." name="search" class="form-control search-input">
+              <button type="submit" class="btn search-btn" value="Search">
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <!--//container-->
+      </header>
+      <!--//header-->
+      <div class="doc-wrapper">
+        <div class="container">
+          <div id="doc-header" class="doc-header text-center">
+            <h1 class="doc-title">
+              <i class="icon fa fa-paper-plane"></i>Asp Dot net core 8 CRUD
+            </h1>
+            <div class="meta">
+              <i class="far fa-clock"></i> Last updated: 20/05/2024
+            </div>
+          </div>
+          <!--//doc-header-->
+          <div class="doc-body row">
+            <div class="doc-content col-md-12 col-12 order-1">
+              <div class="content-inner">
+                <section id="download-section" class="doc-section">
+                  <h2 class="section-title">Description</h2>
+                  <div class="section-block">
+                    <p>Description coming soon... </p>
+                    <a href="https://github.com/Suraj999-github/Asp.net-core-8-Crud-with-mvc" class="btn btn-green" target="_blank">
+                      <i class="fas fa-download"></i> Download Project on Github </a>
+                  </div>
+                </section>               
+                <!--//doc-section-->
+                <section id="code-section" class="doc-section">
+                  <h2 class="section-title">Code</h2>
+                 
+                  <!--//section-block-->
+                  <div id="html" class="section-block">
+                    <div class="callout-block callout-success">
+                      <p>Description coming soon... </p>                     
+                     
+                    </div>
+                    <div class="code-block">
+                      <h6>HTML Code Example</h6>
+					  <textarea class="bg-body-secondary col-md-12 p-3" readonly rows="7" style="background:none; border:none; resize:none; outline:none; width:100%;">
+[HttpGet]
+[Route("/student/add")]
+public IActionResult add() {
+  AddStudent student = new AddStudent();
+  return View(student);
+}
+						</textarea>
+                    </div>
+                    <!--//code-block-->
+                  </div>               
+
+                  <!--//section-block-->
+                </section> 
+    <section id="code-doc" class="doc-section">
+                  <h2 class="section-title">Code</h2>
+                 
+                  <!--//section-block-->
+                  <div id="html" class="section-block">
+                    <div class="callout-block callout-success">
+                      <p>Description coming soon... </p>                     
+                     
+                    </div>			
+                    <!--//code-block-->
+                  </div> 
+<div class="col-md-12">
+<img src="docs/images/i1.jfif" class="img-fluid" alt="Responsive image">	
+</div>				  
+						  
+
+                  <!--//section-block-->
+                </section> 
+						  <div class="code-block">                     
+					  <textarea class="bg-body-secondary col-md-12 p-3" readonly rows="40" style="background:none; border:none; resize:none; outline:none; width:100%;">
+    
+    public class AddStudent
+    {
+        public string? PhoneNumber { get; set; }
+        public string? Salutation { get; set; }
+        public string? FirstName { get; set; }
+        public string? MiddleName { get; set; }
+        public string? LastName { get; set; }
+    }
+  
+						</textarea>
+                    </div>
+				
+                <!--//doc-section-->
+              </div>
+              <!--//content-inner-->
+            </div>          
+          </div>
+          <!--//doc-body-->
+        </div>
+        <!--//container-->
+      </div>
+      <!--//doc-wrapper-->
+
+    </div>
+    <!--//page-wrapper-->
+    <footer id="footer" class="footer text-center">
+      <div class="container">      
+      </div>
+      <!--//container-->
+    </footer>
+    <!--//footer-->
+    <!-- Main Javascript -->
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/prism/prism.js"></script>
+    <script src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>
+    <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
+    <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
